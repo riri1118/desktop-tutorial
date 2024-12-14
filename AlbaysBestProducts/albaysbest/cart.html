@@ -1,0 +1,254 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+    <title>Cart</title>
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/meanmenu.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <!--PreLoader-->
+    <div class="loader">
+        <div class="loader-inner">
+            <div class="circle"></div>
+        </div>
+    </div>
+    <!--PreLoader Ends-->
+
+    <!-- header -->
+    <div class="top-header-area" id="sticker">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 text-center">
+                    <div class="main-menu-wrap">
+                        <div class="site-logo">
+                            <a href="index.html">
+                                <img src="assets/img/logo.png" alt="">
+                            </a>
+                        </div>
+                        <nav class="main-menu">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="cart.html">Cart</a></li>
+                                <li>
+                                    <div class="header-icons">
+                                        <a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end header -->
+
+    <!-- breadcrumb-section -->
+    <div class="breadcrumb-section breadcrumb-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <div class="breadcrumb-text">
+                        <p>Fresh and Organic</p>
+                        <h1>Cart</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end breadcrumb section -->
+
+    <!-- cart -->
+    <div class="cart-section mt-150 mb-150">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-12">
+                    <div class="cart-table-wrap">
+                        <table class="cart-table">
+                            <thead class="cart-table-head">
+                                <tr class="table-head-row">
+                                    <th class="product-remove"></th>
+                                    <th class="product-image">Product Image</th>
+                                    <th class="product-name">Name</th>
+                                    <th class="product-price">Price</th>
+                                    <th class="product-quantity">Quantity</th>
+                                    <th class="product-total">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cart-items">
+                                <!-- Dynamically added cart items will appear here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="total-section">
+                        <table class="total-table">
+                            <thead class="total-table-head">
+                                <tr class="table-total-row">
+                                    <th>Total</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="total-data">
+                                    <td><strong>Subtotal: </strong></td>
+                                    <td><span id="subtotal">₱0.00</span></td>
+                                </tr>
+                                <tr class="total-data">
+                                    <td><strong>Shipping: </strong></td>
+                                    <td>₱50.00</td>
+                                </tr>
+                                <tr class="total-data">
+                                    <td><strong>Total: </strong></td>
+                                    <td><span id="total-price">₱50.00</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="cart-buttons">
+                            <a href="cart.html" class="boxed-btn">Update Cart</a>
+                            <a href="checkout.html" class="boxed-btn black">Check Out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <div class="container">
+        <section id="products">
+            <h2>Our Products</h2>
+            <div class="product" data-id="1" data-name="Pili Nuts" data-price="200.00">
+                <h3>Pili Nuts</h3>
+                <p>Price: ₱200.00</p>
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            <div class="product" data-id="2" data-name="Coconut Jam" data-price="150.00">
+                <h3>Coconut Jam</h3>
+                <p>Price: ₱150.00</p>
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            <div class="product" data-id="3" data-name="Abaca Bags" data-price="500.00">
+                <h3>Abaca Bags</h3>
+                <p>Price: ₱500.00</p>
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </section>
+
+        <section class="cart">
+            <h2>Your Cart</h2>
+            <div id="cart-list"></div>
+            <p id="total-price-display">Total: ₱0.00</p>
+        </section>
+    </div>
+
+    <!-- footer -->
+    <div class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="footer-text">
+                        <p>&copy; 2024 All Rights Reserved | Shop Template</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery-1.11.3.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/magnific-popup.js"></script>
+    <script src="assets/js/meanmenu.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        let cart = [];
+        
+        // Function to add product to cart
+        function addToCart(button) {
+            const productElement = button.closest('.product');
+            const productId = productElement.getAttribute('data-id');
+            const productName = productElement.getAttribute('data-name');
+            const productPrice = parseFloat(productElement.getAttribute('data-price'));
+
+            // Check if product already exists in cart
+            const existingProductIndex = cart.findIndex(item => item.id === productId);
+            
+            if (existingProductIndex !== -1) {
+                cart[existingProductIndex].quantity++;
+            } else {
+                cart.push({
+                    id: productId,
+                    name: productName,
+                    price: productPrice,
+                    quantity: 1
+                });
+            }
+            
+            updateCart();
+        }
+
+        // Update cart UI and recalculate total
+        function updateCart() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const totalPriceElement = document.getElementById('total-price-display');
+            const subtotalElement = document.getElementById('subtotal');
+            let totalPrice = 0;
+            cartItemsContainer.innerHTML = '';
+            
+            // Display cart items
+            cart.forEach(item => {
+                const row = document.createElement('tr');
+                row.classList.add('table-body-row');
+                row.innerHTML = `
+                    <td class="product-remove"><a href="#" onclick="removeFromCart('${item.id}')"><i class="far fa-window-close"></i></a></td>
+                    <td class="product-image"><img src="assets/img/products/product-img-1.jpg" alt=""></td>
+                    <td class="product-name">${item.name}</td>
+                    <td class="product-price">₱${item.price.toFixed(2)}</td>
+                    <td class="product-quantity"><input type="number" value="${item.quantity}" onchange="updateQuantity('${item.id}', this.value)"></td>
+                    <td class="product-total">₱${(item.price * item.quantity).toFixed(2)}</td>
+                `;
+                cartItemsContainer.appendChild(row);
+                totalPrice += item.price * item.quantity;
+            });
+            
+            // Update totals
+            subtotalElement.textContent = `₱${totalPrice.toFixed(2)}`;
+            totalPriceElement.textContent = `Total: ₱${(totalPrice + 50).toFixed(2)}`; // Including shipping
+        }
+
+        // Remove product from cart
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCart();
+        }
+
+        // Update quantity of product in cart
+        function updateQuantity(productId, quantity) {
+            const product = cart.find(item => item.id === productId);
+            if (product) {
+                product.quantity = parseInt(quantity);
+                updateCart();
+            }
+        }
+    </script>
+</body>
+</html>
